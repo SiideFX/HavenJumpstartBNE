@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://da1mlifcl70kh"]
+
+[ext_resource type="Script" uid="uid://djexywha20d6p" path="res://coin.gd" id="1_0t63x"]
+[ext_resource type="Texture2D" uid="uid://ddx2n3p5xr2fx" path="res://pixil-frame-0.png" id="2_v7riw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0t63x"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_0t63x")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_0t63x")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_v7riw")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
